@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "public"."dialogues"
+  type: run_sql

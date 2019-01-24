@@ -1,0 +1,12 @@
+- args:
+    sql: CREATE TABLE "public"."episodes"("id" serial NOT NULL UNIQUE, "episode_number"
+      text NOT NULL, "name" text NOT NULL, "length" integer NOT NULL, "language" text
+      NOT NULL DEFAULT 'EN', "sub_group" text NOT NULL DEFAULT '__UNKNOWN__', "thumbnail_url"
+      text NOT NULL, "anime_id" integer NOT NULL, "download_id" integer , "created_at"
+      timestamptz NOT NULL DEFAULT now(), "updated_at" timestamptz NOT NULL DEFAULT
+      now(), PRIMARY KEY ("id") );
+  type: run_sql
+- args:
+    name: episodes
+    schema: public
+  type: add_existing_table_or_view
